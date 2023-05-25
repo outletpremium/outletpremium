@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Loja de Roupas</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <script>
+    
+	function openModal(imageUrl, valorr, desc) {
+	  var modal = document.getElementById('modal');
+	  var modalImage = document.getElementById('modal-image');
+	  var valor = document.getElementById('modal-price');
+	  var descricao = document.getElementById('modal-description');
+	  
+	  modal.style.display = 'block';
+	  modalImage.src = imageUrl;
+	  valor.textContent =  'R$' + valorr
+	  descricao.textContent = desc
+	}
+
+	function closeModal() {
+	  var modal = document.getElementById('modal');
+	  modal.style.display = 'none';
+	}
+	
+	function focusGallery() {
+	  var gallery = document.getElementById('gallery');
+	  gallery.focus();
+	}
+	
+	function focusContato(event) {
+	  event.preventDefault();
+	  var contato = document.getElementById('contato');
+	  contato.focus();
+	}
+	
+	
+
+</script>
+  
+</head>
+<body>
+  <header class="fixed-header">
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Roupas Masculinas</a></li>       
+        <li><a href="#">Sobre Nós</a></li>
+         <li><a href="#" onclick="focusContato(event)">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner">
+    <h1>Bem-vindo à Minha Loja de Roupas</h1>
+    <p>Encontre as últimas tendências da moda masculina e feminina.</p>
+    
+	<button class="btn" onclick="focusGallery()">Ver Coleção</button>
+  </section>
+
+  <section class="destaques">
+    <h2>Destaques</h2>
+    <div class="produto">
+      <img src="img/04.jpg" alt="Produto 1">
+      <h3>Abercrombie</h3>
+      <p>R$70,00</p>
+    </div>
+    <div class="produto">
+      <img src="img/05.jpg" alt="Produto 2">
+      <h3>Prada</h3>
+      <p>R$70,00</p>
+    </div>
+    <div class="produto">
+      <img src="img/06.jpg" alt="Produto 3">
+      <h3>Dolce & Gabbana</h3>
+      <p>R$70,00</p>
+    </div>
+  </section>
+  
+  <section class="galeria" id="gallery" tabindex="-1">
+    <h2>Coleção</h2>
+	<div class="carousel">
+	  <div class="carousel-container">
+		 <img src="img/01.png" alt="Produto 1" onclick="openModal('img/01.png', 69.99, 'camisa 1')">
+		<img src="img/02.jfif" alt="Produto 2" onclick="openModal('img/02.jfif', 69.99, 'camisa 2')">
+		<img src="img/03.jfif" alt="Produto 3" onclick="openModal('img/03.jfif', 69.99, 'camisa 3')">
+		<!-- Adicione mais imagens conforme necessário -->
+		<img src="img/01.png" alt="Produto 1" onclick="openModal('img/01.png', 69.99, 'camisa 1')">
+		<img src="img/02.jfif" alt="Produto 2" onclick="openModal('img/02.jfif', 79.99, 'camisa 2')">
+		<img src="img/03.jfif" alt="Produto 3" onclick="openModal('img/03.jfif', 89.99, 'camisa 3')">
+		<img src="img/01.png" alt="Produto 1" onclick="openModal('img/01.png', 69.99, 'camisa 1')">
+		<img src="img/02.jfif" alt="Produto 2" onclick="openModal('img/02.jfif', 79.99, 'camisa 2')">
+		<img src="img/03.jfif" alt="Produto 3" onclick="openModal('img/03.jfif', 89.99, 'camisa 3')">
+		
+	  </div>
+	</div>
+	
+	<div id="modal" class="modal">
+	  <div class="modal-content">
+		<span class="close" onclick="closeModal()">&times;</span>
+		<img id="modal-image" src="">
+		<span id="modal-description"></span>
+		<span id="modal-price" ></span>
+	  </div>
+	</div>
+
+
+  </section>
+  
+  
+  <section id="contato" tabindex="-1">
+    <h2>Contato</h2>
+    <p>Entre em contato comigo através do e-mail: ivonildolopes@gmail.com</p>
+    <ul class="redes-sociais">
+      <li><a href="#" target="_blank">LinkedIn</a></li>
+      <li><a href="#" target="_blank">Twitter</a></li>
+      <li><a href="#" target="_blank">Instagram</a></li>
+    </ul>
+  </section>
+  
+
+  <footer>
+    <p>© 2023 Outlet Top premium. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+
+</html>
+
