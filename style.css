@@ -181,3 +181,9 @@ section {
   padding: 40px 20px;
 }
 
+#modal-image {
+
+width: 400px;
+  height: 500px;
+  margin: 10px;	
+}
